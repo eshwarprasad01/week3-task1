@@ -107,8 +107,7 @@ function convert() {
   string_value = first + string_value.slice(1, string_value.length);
   document.querySelector(".output").innerHTML = string_value + ".";
 }
-
-// document.querySelector("input").addEventListener("press", function () {
-//   document.querySelector("input").focus();
-//   document.querySelector("input").select();
-// });
+document.addEventListener("keypress", function (event) {
+  // console.log(event.key);
+  if (event.key == "Enter") convert();
+});
