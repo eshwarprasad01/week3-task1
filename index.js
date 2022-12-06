@@ -71,7 +71,8 @@ function convert() {
   var string_value = "";
   if (value < 0 || value > 999) {
     string_value = "Out of range";
-  } else if (value == 0) {
+  } else if (value == "") string_value = "NULL";
+  else if (value == 0) {
     string_value = "zero";
   } else {
     if (Math.floor(value / 100)) {
@@ -108,6 +109,5 @@ function convert() {
   document.querySelector(".output").innerHTML = string_value + ".";
 }
 document.addEventListener("keypress", function (event) {
-  // console.log(event.key);
   if (event.key == "Enter") convert();
 });
